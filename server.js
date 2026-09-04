@@ -1,5 +1,10 @@
 import express from 'express'
 const app = express()
+const port = process.env.PORT || 8080
+import {Server} from 'socket.io'
+import { formatMessage } from './utils/message.js'
+import { addUser , getUser , getUsersInRoom, removeUser } from './utils/users.js'
+
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -8,10 +13,10 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(__dirname)); 
 app.use(express.static(path.join(__dirname, 'public'))); 
-const port = process.env.PORT || 8080
-import {Server} from 'socket.io'
-import { formatMessage } from './utils/message.js'
-import { addUser , getUser , getUsersInRoom, removeUser } from './utils/users.js'
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 const io = new Server(server, {
