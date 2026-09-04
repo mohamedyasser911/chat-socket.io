@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3000');
+const socket = io("https://chat-socketio-production-5e8b.up.railway.app");
 var chatForm = document.getElementById("chat-form");
 
 var chatMessages = document.querySelector(".chat-messages");
