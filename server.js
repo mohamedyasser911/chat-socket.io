@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(path.resolve(), 'public')));
-
+app.use(express.static(__dirname)); 
+app.use(express.static(path.join(__dirname, 'public'))); 
 const port = process.env.PORT || 3000
 import {Server} from 'socket.io'
 import { formatMessage } from './utils/message.js'
