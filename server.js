@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000
 import {Server} from 'socket.io'
 import { formatMessage } from './utils/message.js'
 import { addUser , getUser , getUsersInRoom, removeUser } from './utils/users.js'
-app.get('/', (req, res) => res.send('Hello World!'))
+
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 const io = new Server(server, {
     cors:"*"
