@@ -1,7 +1,7 @@
 import express from 'express'
 const app = express()
 
-const port = 3000
+const port = process.env.PORT || 3000
 import {Server} from 'socket.io'
 import { formatMessage } from './utils/message.js'
 import { addUser , getUser , getUsersInRoom, removeUser } from './utils/users.js'
