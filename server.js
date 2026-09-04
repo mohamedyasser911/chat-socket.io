@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(__dirname)); 
 app.use(express.static(path.join(__dirname, 'public'))); 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8080
 import {Server} from 'socket.io'
 import { formatMessage } from './utils/message.js'
 import { addUser , getUser , getUsersInRoom, removeUser } from './utils/users.js'
