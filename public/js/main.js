@@ -1,4 +1,4 @@
-const socket = io();
+const socket =io();
 var chatForm = document.getElementById("chat-form");
 
 var chatMessages = document.querySelector(".chat-messages");
