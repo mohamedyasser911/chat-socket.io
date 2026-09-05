@@ -1,4 +1,4 @@
-const socket = io("https://chat-socketio-production-5e8b.up.railway.app");
+const socket = io();
 var chatForm = document.getElementById("chat-form");
 
 var chatMessages = document.querySelector(".chat-messages");

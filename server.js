@@ -42,17 +42,11 @@ io.on("connection", (socket) => {
     
 
 )
-    
-
-
-   
-    
-
     socket.on("chatMessage", (msg) => {
         const user=getUser(socket.id)
         io.to(user.room).emit("message", formatMessage(user.username, msg));
     
-   
+    })
     })
 
     socket.on("disconnect", () => {
@@ -69,5 +63,5 @@ io.on("connection", (socket) => {
  
     })
 
-})
+
     
